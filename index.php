@@ -1,9 +1,12 @@
-<?php
-require_once("navigation.php");
-$home = new Page();
-$home->pageTitle = "Dollar Tree - Home";
-$home->headerTitle = "Home";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link href='/style/style.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
 
-$home->displayPage();
-?>
-<link href='style.css' type='text/css' rel='stylesheet'>
+</body>
+</html>
+
