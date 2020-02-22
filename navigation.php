@@ -3,7 +3,7 @@ class Page {
   public $content;
   public $pageTitle;
   public $headerTitle;
-  public $style = array('/style/style.css');
+  public $style = array('./style/style.css');
   public $navLinks = array (
     "Home" => 'index.php',
   );
@@ -60,7 +60,7 @@ class Page {
         $html.= "<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>\n";
         $html.= "<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>\n";
         $html.= "<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>";
-        $html.= "<link href='/images/Logo.png' rel='icon'>\n";
+        $html.= "<link href='./images/Logo.png' rel='icon'>\n";
         $html.= "<meta charset='utf-8'>\n";
         $html.= "<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
       }
