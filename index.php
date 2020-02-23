@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- Video Background -->
-    <video autoplay muted loop id="myVideo">
+    <video style="z-index: -1; opacity:0.8;" autoplay muted loop id="myVideo">
     <source src="./images/FoodMarketApplesH264.mov" type="video/mp4">
     Your browser does not support HTML5 video.
     </video>
@@ -29,6 +29,12 @@
             </a>
         </div>
         <img class="logo" id="dt_logo" src="./images/DT-Logo-White.png.webp">
+    </div>
+    <!-- End Tag -->
+
+    <!-- Search Bar -->
+    <div class="searchBar">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder=" Search for names.." title="Type in a name">
     </div>
     <!-- End Tag -->
 
@@ -54,7 +60,7 @@
             
         <button type="submit">Login</button>
         <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me <div style="text-align: right">Not a member? <a href="signup.php">sign up</a></div>
+            <input type="checkbox" checked="checked" name="remember"> Remember me <div style="text-align: right">Not a member? <a href="signup.php">Sign up</a></div>
         </label>
         </div>
 
