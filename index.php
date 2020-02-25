@@ -34,7 +34,7 @@
 
     <!-- Search Bar -->
     <div class="searchBar">
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder=" Search for names.." title="Type in a name">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
     </div>
     <!-- End Tag -->
 
