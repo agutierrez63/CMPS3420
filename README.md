@@ -1,2 +1,2 @@
 # CMPS3420
- Fornt End Dollar Tree
+ Front End Dollar Tree Website
