@@ -1,4 +1,9 @@
-<?php include ("connectToDB.php");?>
+<?php include ("connectToDB.php");
+
+if(isset($_POST["search"])) {
+    $search_query = $_POST["search"];
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -62,11 +67,21 @@
     <!-- Search Bar -->
     <div class="searchBar">
         <img class="logo" id="dt_logo" src="./images/DT-Logo-White.png.webp"><br>
-        <input type="text" id="myInput" onkeyup="searchBar()" placeholder="Search for names.." title="Type in a name">
+        <form name="form" method="POST" action="searchResults.php">
+            <input type="text" id="myInput" onkeyup="searchBar()" placeholder="Search for names.." title="Type in a name">
+        </form>
         <?php
-        $result = pg_query($db_connection, "select name from items");
-        $row = pg_fetch_row($result);
-        print number_format($row[0]);
+        $query = "SELECT name FROM items";
+        $result = pg_query($query) or die ("Query failed: ".pg_last_error());
+        echo "<table>\n";
+        while($line = pg_fetch_row($result, null, PGSQL_ASSOC)) {
+            echo "\t<tr>\n";
+            foreach($line as $col_val) {
+                echo "\t\t<td>$col_val</td>\n";
+            }
+            echo "\t</tr>\n";
+        }
+        echo "</table>\n";
         ?>
         <p id="results"></p><br>
     </div>
