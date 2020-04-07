@@ -1,8 +1,4 @@
-<?php include ("connectToDB.php");
-
-if(isset($_POST["search"])) {
-    $search_query = $_POST["search"];
-}
+<?php include ('connectToDB.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -22,7 +18,7 @@ if(isset($_POST["search"])) {
     </video>
     <!-- End Tag -->
 
-    <div id="mySidebar" class="sidebar">
+    <div id="mySidebar1" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#">Kitchen & Dining</a>
         <a href="#">Food, Candy & Drinks</a>
@@ -39,8 +35,8 @@ if(isset($_POST["search"])) {
         <a href="#">Care Packages</a>
     </div>
 
-    <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div id="mySidebar2" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
         <a href="#">Florists & Gift Shops</a>
         <a href="#">Weddings, Catering & Events</a>
         <a href="#">Restraunts, Bars & Hospitality</a>
@@ -52,7 +48,7 @@ if(isset($_POST["search"])) {
     <!-- Nav Bar -->
     <div class="topnav" id="myTopnav">
         <a href="#shopbydepartment" id="department" onclick="openNav()" ><i style="font-size:24px" class="fa">&#xf107;</i> Shop By Department</a>
-        <a href="#shopbybusiness" id="business"onclick="openNav()"><i style="font-size:24px" class="fa">&#xf107;</i> Shop by Business</a>
+        <a href="#shopbybusiness" id="business"onclick="openNav2()"><i style="font-size:24px" class="fa">&#xf107;</i> Shop by Business</a>
         <div class="topnav-right">
             <a onclick="document.getElementById('id01').style.display='block'" style="width:auto;" href="#login">
             <i style="font-size:24px" class="fa">&#xf090;</i> Login</a>
@@ -67,25 +63,13 @@ if(isset($_POST["search"])) {
     <!-- Search Bar -->
     <div class="searchBar">
         <img class="logo" id="dt_logo" src="./images/DT-Logo-White.png.webp"><br>
-        <form name="form" method="POST" action="searchResults.php">
-            <input type="text" id="myInput" onkeyup="searchBar()" placeholder="Search for names.." title="Type in a name">
+        <form name="form" method="POST" action="index.php">
+            <input name="search" type="text" id="myInput" placeholder="Search for names.." title="Type in a name">
+            <input type="submit" value="Submit">
         </form>
-        <?php
-        $query = "SELECT name FROM items";
-        $result = pg_query($query) or die ("Query failed: ".pg_last_error());
-        echo "<table>\n";
-        while($line = pg_fetch_row($result, null, PGSQL_ASSOC)) {
-            echo "\t<tr>\n";
-            foreach($line as $col_val) {
-                echo "\t\t<td>$col_val</td>\n";
-            }
-            echo "\t</tr>\n";
-        }
-        echo "</table>\n";
-        ?>
-        <p id="results"></p><br>
     </div>
     <!-- End Tag -->
+
 
     <!-- Main Body Tag -->
     <div class="content">

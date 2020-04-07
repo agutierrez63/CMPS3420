@@ -17,39 +17,25 @@ function menu() {
   }
 }
 
-/*function myFunction() {
-  var x = document.getElementById("Demo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}*/
-
-function searchBar() {
-  var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-  li = ul.getElementsByTagName("li");
-  for (i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
-      txtValue = a.textContent || a.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          li[i].style.display = "";
-      } else {
-          li[i].style.display = "none";
-      }
-  }
-}
-
+/* Open Navs */
 function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("mySidebar1").style.width = "250px";
   document.getElementById("body").style.marginLeft = "250px";
 }
 
+function openNav2() {
+  document.getElementById("mySidebar2").style.width = "250px";
+  document.getElementById("body").style.marginLeft = "250px";
+}
+
+/* Close Navs */
 function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("mySidebar1").style.width = "0";
+  document.getElementById("body").style.marginLeft= "0";
+}
+
+function closeNav2() {
+  document.getElementById("mySidebar2").style.width = "0";
   document.getElementById("body").style.marginLeft= "0";
 }
 
