@@ -28,6 +28,16 @@ function openNav2() {
   document.getElementById("body").style.marginLeft = "250px";
 }
 
+function openNav3() {
+  document.getElementById("mySidebar3").style.width = "250px";
+  document.getElementById("body").style.marginLeft = "250px";
+}
+
+function openNav4() {
+  document.getElementById("mySidebar4").style.width = "250px";
+  document.getElementById("body").style.marginLeft = "250px";
+}
+
 /* Close Navs */
 function closeNav() {
   document.getElementById("mySidebar1").style.width = "0";
@@ -35,6 +45,15 @@ function closeNav() {
 }
 
 function closeNav2() {
+  document.getElementById("mySidebar2").style.width = "0";
+  document.getElementById("body").style.marginLeft= "0";
+}
+
+function closeNav3() {
+  document.getElementById("mySidebar2").style.width = "0";
+  document.getElementById("body").style.marginLeft= "0";
+}
+function closeNav4() {
   document.getElementById("mySidebar2").style.width = "0";
   document.getElementById("body").style.marginLeft= "0";
 }

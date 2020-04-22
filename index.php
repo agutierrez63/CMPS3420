@@ -20,35 +20,50 @@
 
     <div id="mySidebar1" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Kitchen & Dining</a>
-        <a href="#">Food, Candy & Drinks</a>
-        <a href="#">Party Supplies</a>
-        <a href="#">Health & Beuty Supplies</a>
-        <a href="#">Office & School Supplies</a>
-        <a href="#">Toys, Books, Puzzles & Games</a>
-        <a href="#">Arts & Crafts Suppies</a>
-        <a href="#">Household & Pet Supplies</a>
-        <a href="#">Extreme Values & New Arrivals</a>
-        <a href="#">Cleaning & Storage</a>
-        <a href="#">Seasons & Occasions</a>
-        <a href="#">Holidays</a>
-        <a href="#">Care Packages</a>
+        <a href="#">Party Goods</a>
+        <a href="#">Stationery</a>
+        <a href="#">Crafts</a>
     </div>
 
     <div id="mySidebar2" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
-        <a href="#">Florists & Gift Shops</a>
-        <a href="#">Weddings, Catering & Events</a>
-        <a href="#">Restraunts, Bars & Hospitality</a>
-        <a href="#">Car Facilities</a>
-        <a href="#">Religious & Nonprofit Organziations</a>
-        <a href="#">Cleaning Services</a>
+        <a href="#">Toys</a>
+        <a href="#">Baby/Infant</a>
+        <a href="#">Fashion Accesories</a>
+        <a href="#">Softlines</a>
+        <a href="#">Floral</a>
+        <a href="#">Valentine</a>
+        <a href="#">Easter</a>
+        <a href="#">Halloween</a>
+        <a href="#">Thanksgiving/Fall Seasonal</a>
+        <a href="#">Christmas</a>
+    </div>
+
+    <div id="mySidebar3" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+        <a href="#">Food</a>
+        <a href="#">Candy</a>
+        <a href="#">DSD</a>
+        <a href="#">HBC</a>
+    </div>
+
+    <div id="mySidebar4" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
+        <a href="#">Gifts</a>
+        <a href="#">Household Consumables</a>
+        <a href="#">Housewares</a>
+        <a href="#">Pets</a>
+        <a href="#">Hardware</a>
+        <a href="#">Electronics</a>
     </div>
 
     <!-- Nav Bar -->
     <div class="topnav" id="myTopnav">
-        <a href="#shopbydepartment" id="department" onclick="openNav()" ><i style="font-size:24px" class="fa">&#xf107;</i> Shop By Department</a>
-        <a href="#shopbybusiness" id="business"onclick="openNav2()"><i style="font-size:24px" class="fa">&#xf107;</i> Shop by Business</a>
+        <a href="#division1" id="divison1" onclick="openNav()" ><i style="font-size:24px" class="fa">&#xf107;</i> Division 1</a>
+        <a href="#division2" id="division2"onclick="openNav2()"><i style="font-size:24px" class="fa">&#xf107;</i> Division 2</a>
+        <a href="#division3" id="division3"onclick="openNav3()"><i style="font-size:24px" class="fa">&#xf107;</i> Division 3</a>
+        <a href="#division4" id="division4"onclick="openNav4()"><i style="font-size:24px" class="fa">&#xf107;</i> Division 4</a>
+
         <div class="topnav-right">
             <a onclick="document.getElementById('id01').style.display='block'" style="width:auto;" href="#login">
             <i style="font-size:24px" class="fa">&#xf090;</i> Login</a>
