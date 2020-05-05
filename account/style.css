@@ -1,0 +1,69 @@
+/* import from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato&family=Roboto&family=Sofia&display=swap');
+
+:root {
+    --light-gray: #2b3032a1;
+    --primary-color: #6cc551;
+    --border-color: #4b3b40;
+    --text-color: #2a2d34;
+    --roboto: "Roboto", sans-serif;
+    --gugi: "Gugi", cursive;
+    --sofia: "Sofia", curisve;
+}
+
+.primary-color {
+    color: var(--primamry-color);
+}
+
+.bg-primary-color {
+    color: var(--primamry-color) !important;
+}
+
+.text-color {
+    color: var(--text-color);
+}
+
+.font-roboto {
+    font-family: var(--roboto);
+}
+
+.lightgreen {
+    color: lightgreen;
+}
+
+/* header */
+header {
+    background-color: var(--primary-color);
+    font-family: var(--roboto);
+}
+
+header .site-title{
+    font-family: var(--gugi);
+}
+.container .dropdown-toggle, .container .dropdown-item {
+    font-size: 0.7em;
+}
+
+.header-links a {
+    font-size: 0.9em;
+    text-decoration: none;
+    color: white;
+}
+
+/* Navigation */
+.navbar-nav {
+    padding: 0.8em 0em;
+}
+
+.navbar-nav .nav-link{
+    font-size: 0.9em;
+    color: var(--light-gray) !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+    padding: 0 1.3em;
+}
+
+.navbar-nav .basket-icon {
+    margin-right: 6.5rem !important;
+}
