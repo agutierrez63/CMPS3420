@@ -2,13 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato&family=Roboto&family=Sofia&display=swap');
 
 :root {
-    --light-gray: #2b3032a1;
     --primary-color: #6cc551;
-    --border-color: #4b3b40;
+    --secondary-color: #4b7f52;
+    --tertiary-color: #80c2af;
+
     --text-color: #2a2d34;
+    --light-color: #f5f5f5;
+
     --roboto: "Roboto", sans-serif;
     --gugi: "Gugi", cursive;
-    --sofia: "Sofia", curisve;
+    --sofia: "Sofia", cursive;
 }
 
 .primary-color {
@@ -40,6 +43,7 @@ header {
 header .site-title{
     font-family: var(--gugi);
 }
+
 .container .dropdown-toggle, .container .dropdown-item {
     font-size: 0.7em;
 }
@@ -47,7 +51,7 @@ header .site-title{
 .header-links a {
     font-size: 0.9em;
     text-decoration: none;
-    color: white;
+    color: var(--light-color);
 }
 
 /* Navigation */
@@ -57,7 +61,7 @@ header .site-title{
 
 .navbar-nav .nav-link{
     font-size: 0.9em;
-    color: var(--light-gray) !important;
+    color: var(--text-color) !important;
 }
 
 .navbar-nav .nav-item .nav-link {
@@ -66,6 +70,64 @@ header .site-title{
 
 .navbar-nav .basket-icon {
     margin-right: 6.5rem !important;
+}
+
+/* Container info */
+.container-info {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 100px 0 100px 0;
+    background-color: var(--tertiary-color);
+    opacity: 0.7;
+}
+ h3 {
+    color: var(--light-color);
+    text-shadow: black;
+    padding-bottom: 20px;
+ }
+
+ p {
+    color: black;
+    font-family: var(--roboto);
+ }
+
+/* Figure Images */
+.img-thumbnail {
+    width: 300px;
+    height: 300px;
+}
+
+
+/* Footer */
+.container-footer {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+    background-color: var(--primary-color);
+
+}
+  
+.footer {
+    background-color: var(--primary-color);
+}
+  
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity:0;
+    transform: translateY(50px);
+    transition:.5s ease all;
+
+}
+.dropdown-menu.show {
+    display: block;
+    visibility: visible;
+    opacity:1;
+    transform: translateY(0px);
+    transition:.5s ease all;
 }
 
 /* Carousel */

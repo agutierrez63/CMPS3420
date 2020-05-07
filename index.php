@@ -25,9 +25,9 @@
             <div class="row">
                 <div class="col-md-2 col-sm-12 col-12">
                     <div class="btn-group">
-                        <button class="btn border dropdown-toggle my-md-4 my-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD</button>
+                        <button class="btn border dropdown-toggle my-md-4 my-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EN - ENGLISH</button>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">ERU - Euro</a>
+                            <a href="#" class="dropdown-item" id="google_translate_element">ES - SPANISH</a>
                         </div>
                     </div>
                 </div>
@@ -52,14 +52,25 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">FEATURES</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    SHOP
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">DIVISION 1</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">DIVISION 2</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">DIVISION 3</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">DIVISION 4</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">COLLECTION</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./shop/index.php">SHOP</a>
+                    <a class="nav-link" href="#">FEATURES</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">ABOUT US</a>
@@ -106,7 +117,7 @@
                 <img class="d-block w-100" src="./assets/image3.png" alt="Third slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>As An Essential Business We're Here to Serve Your Needs</h5>
-                        <p>Dollar Tree: Everythin is a $1</p>
+                        <p><strong>Dollar Tree: Everything is a $1</strong></p>
                     </div>
                 </div>
             </div>
@@ -118,16 +129,32 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
+        </div><br/>
+
+        <div class="container-info">
+            <h3><strong>Online Ordering Is Now Available Again & We're Excited to Serve You!</strong></h3>
+            <p>Shop online now and ship via UPS to your home or business, or choose free shipping to your store.</p>
+            <p><i>Due to current conditions, some products remain temporarily unavailable for online ordering, but may be available in stores.</i></p>
+        </div><br/>
+        <div class="text-center">
+            <img src="./assets/toys.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
+            <img src="./assets/drinks.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
+            <img src="./assets/toiletry.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
+            <img src="./assets/food.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
         </div>
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted">Place sticky footer content here.</span>
+        </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript" src="./scripts/main.js"></script>
 </body>
 </html>
