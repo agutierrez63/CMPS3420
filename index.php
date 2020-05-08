@@ -27,7 +27,7 @@
                     <div class="btn-group">
                         <button class="btn border dropdown-toggle my-md-4 my-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EN - ENGLISH</button>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item" id="google_translate_element">ES - SPANISH</a>
+                            <a href="#" class="dropdown-item" onclick="googleTranslateElementInit()" id="google_translate_element">ES - SPANISH</a>
                         </div>
                     </div>
                 </div>
@@ -50,10 +50,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">HOME<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="./shop/index.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     SHOP
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -67,10 +67,10 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">COLLECTION</a>
+                    <a class="nav-link" href="./shop/index.php">COLLECTION</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">FEATURES</a>
+                    <a class="nav-link" href="./shop/index.php">FEATURES</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">ABOUT US</a>
@@ -78,9 +78,6 @@
                 </ul>
             </div>
             <div class="navbar-nav">
-                <li class="nav-item border rounded-cicle mx-2 search-icon">
-                    <i class="fas fa-search p-2"></i>
-                </li>
                 <li class="nav-item border rounded-cicle mx-2 basket-icon">
                     <i class="fas fa-shopping-basket p-2"></i>
                 </li>
@@ -117,7 +114,7 @@
                 <img class="d-block w-100" src="./assets/image3.png" alt="Third slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>As An Essential Business We're Here to Serve Your Needs</h5>
-                        <p><strong>Dollar Tree: Everything is a $1</strong></p>
+                        <p style="color:white"><strong>Dollar Tree: Everything is a $1</strong></p>
                     </div>
                 </div>
             </div>
@@ -137,17 +134,39 @@
             <p><i>Due to current conditions, some products remain temporarily unavailable for online ordering, but may be available in stores.</i></p>
         </div><br/>
         <div class="text-center">
-            <img src="./assets/toys.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
-            <img src="./assets/drinks.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
-            <img src="./assets/toiletry.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
-            <img src="./assets/food.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
+            <!--<div class="row">
+                <div class="sm-col">
+                    <div class="overlay-container">
+                        <img src="./assets/toys.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
+                        <div class="middle">
+                            <div class="overlay-text"><a style="text-decoration: none;" href="./shop/index.php">Shop Now</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm-col">
+                    <div class="overlay-container">
+                        <img src="./assets/toys.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
+                        <div class="middle">
+                            <div class="overlay-text"><a style="text-decoration: none;" href="./shop/index.php">Shop Now</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm-col">
+                    <div class="overlay-container">
+                        <img src="./assets/toys.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
+                        <div class="middle">
+                            <div class="overlay-text"><a style="text-decoration: none;" href="./shop/index.php">Shop Now</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div-->
         </div>
-    </main>
+    </main><br/>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3">
         <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
+            <span class="text-muted">Copyright &copy<span id="year"></span></span>
         </div>
     </footer>
 
@@ -155,6 +174,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script type="text/javascript" src="./scripts/main.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html>
