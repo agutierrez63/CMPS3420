@@ -25,9 +25,9 @@
             <div class="row">
                 <div class="col-md-2 col-sm-12 col-12">
                     <div class="btn-group">
-                        <button class="btn border dropdown-toggle my-md-4 my-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EN - ENGLISH</button>
+                        <button class="btn border dropdown-toggle my-md-4 my-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language Translate</button>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item" onclick="googleTranslateElementInit()" id="google_translate_element">ES - SPANISH</a>
+                            <a href="#translateSpanish" class="dropdown-item" onclick="googleTranslateElementInit()" id="google_translate_element"></a>
                         </div>
                     </div>
                 </div>
@@ -134,8 +134,9 @@
             <p><i>Due to current conditions, some products remain temporarily unavailable for online ordering, but may be available in stores.</i></p>
         </div><br/>
         <div class="text-center">
-            <!--<div class="row">
-                <div class="sm-col">
+            <div class="row" style="width:100%">
+                <div class="sm-col" style="margin: 0 100px 0 420px">
+                    <h4 class="text-center">Toys</h4>
                     <div class="overlay-container">
                         <img src="./assets/toys.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
                         <div class="middle">
@@ -144,22 +145,24 @@
                     </div>
                 </div>
                 <div class="sm-col">
+                    <h4 class="text-center">Drinks</h4>
                     <div class="overlay-container">
-                        <img src="./assets/toys.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
+                        <img src="./assets/drinks.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
                         <div class="middle">
                             <div class="overlay-text"><a style="text-decoration: none;" href="./shop/index.php">Shop Now</a></div>
                         </div>
                     </div>
                 </div>
-                <div class="sm-col">
+                <div class="sm-col" style="margin: 0 100px;">
+                    <h4 class="text-center">Toiletry</h4>
                     <div class="overlay-container">
-                        <img src="./assets/toys.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
+                        <img src="./assets/toiletry.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
                         <div class="middle">
                             <div class="overlay-text"><a style="text-decoration: none;" href="./shop/index.php">Shop Now</a></div>
                         </div>
                     </div>
                 </div>
-            </div-->
+            </div>
         </div>
     </main><br/>
 
