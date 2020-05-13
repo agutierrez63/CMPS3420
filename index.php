@@ -73,7 +73,7 @@
                     <a class="nav-link" href="./shop/index.php">FEATURES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">ABOUT US</a>
+                    <a class="nav-link" href="./aboutus/index.php">ABOUT US</a>
                 </li>
                 </ul>
             </div>
@@ -169,7 +169,7 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-3">
         <div class="container">
-            <span class="text-muted">Copyright &copy<span id="year"></span></span>
+            <span class="text-muted">Copyright &copy<span id="year"></span><span style="margin-left:200px;">Created by Group3: Adrian Gutierrez, Rudy Martinez, Justin Selsor</span</span>
         </div>
     </footer>
 

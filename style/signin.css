@@ -31,6 +31,11 @@ body {
   background: linear-gradient(-45deg, #6cc551, #fff);
 }
 
+img {
+  width:"160px"; 
+  height:"90px";
+}
+
 .form-signin {
   background-color: #f5f5f5;
   width: 100%;

@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <link rel="icon" href="./assets/favicon.ico">
+    <link rel="icon" href="../assets/favicon.ico">
 
     <title>Dollar Tree | Home</title>
 
@@ -36,8 +36,8 @@
                 </div>
                 <div class="col-md-3 col-12 text-right">
                     <p class="my-md-4 header-links">
-                        <a href="./signin/index.php" class="px-2"  onclick="document.getElementById('id01')">Sign In </a>
-                        <a href="./createaccount/index.php" class="px-2">Create Account</a>
+                        <a href="../signin/index.php" class="px-2"  onclick="document.getElementById('id01')">Sign In </a>
+                        <a href="../createaccount/index.php" class="px-2">Create Account</a>
                     </p>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     <a class="nav-link" href="../index.php">HOME<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="index.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="../shop/index.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     SHOP
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -67,13 +67,13 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">COLLECTION</a>
+                    <a class="nav-link" href="../shop/index.php">COLLECTION</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">FEATURES</a>
+                    <a class="nav-link" href="../shop/index.php">FEATURES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../aboutus/index.php">ABOUT US</a>
+                    <a class="nav-link" href="index.php">ABOUT US</a>
                 </li>
                 </ul>
             </div>
@@ -88,8 +88,27 @@
 
     <!-- Main -->
     <main>
- 
-    </main><br/>
+        <h3 style="color: black; margin-left: 10px;">About Us</h3>
+            <p style="margin-left: 10px;">We love to hear from our customers and overwhelmingly the two comments we repeatedly receive are:</p>
+            <p class="text-center" style="color:#6cc551;"><strong><i>"I can't believe this cool item I just found at Dollar Tree!" AND...<br/>
+            "I can't believe it's only $1.00!"</i></strong></p>
+            <p style="margin-left: 10px;">That’s when we know we've done our jobs right! We have worked hard to create an environment where 
+            shopping is fun... a place where our customers can discover new treasures every week... a store where
+            entire families can enjoy hunting for that special something. Every Dollar Tree store is bright and well
+            lit, clean and well organized, and stocked with endless hidden treasures!</p>
+            <p style="margin-left: 10px;">Just as important, we continue to offer our customers products they need at extreme values! We carry a
+            broad, exciting mix of merchandise that includes many trusted national and regional brands. Some of the
+            product departments you'll find at Dollar Tree include housewares, glassware, dinnerware, cleaning
+            supplies, candy, snacks, food, health and beauty, toys, gifts, gift bags and wrap, party supplies,
+            stationery, craft supplies, teaching supplies, books, seasonal décor, and so much more. Everything you
+            need for every day, every holiday, every occasion... and every single item is only $1 (or less)!</p>
+            <p style="margin-left: 10px;">The best part is that there is probably a Dollar Tree store near you! We are a national company with 
+            thousands of stores conveniently located in shopping centers and malls in all 48 contiguous states. You
+            can also shop online for larger quantities of the same items you'd find in our stores, plus check out craft
+            and project ideas, take advantage of online exclusives and manufacturer closeouts, watch videos, and join
+            our Value Seekers Club to find even more fun and frugal ideas. We invite you to come check us out, compare
+            our prices, and stretch your dollars by shopping with us... Discover the <strong style="color:#6cc551;">Dollar Tree Difference!</strong></p>
+    </main><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3">

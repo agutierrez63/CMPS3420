@@ -1,3 +1,5 @@
+<?php include("../connectToDB.php") ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
@@ -17,20 +19,24 @@
   </head>
 
   <body class="text-center">
-    <form class="form-signin">
-      <img class="mb-4" src="../assets/Dollar_Tree_logo_symbol.png" alt="" width="160" height="90">
+    <form class="form-signin" method="POST" action="index.php">
+      <?php include ("../errors.php") ?>
+      <a href="../index.php"><img class="mb-4" src="../assets/Dollar_Tree_logo_symbol.png" alt="" width="160px" height="90px"></a>
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus><br />
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <input type="password" id="password" class="form-control" placeholder="Password" required>
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
       <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
+      <p class="mt-5 mb-3 text-muted">Copyright &copy; 2020</p>
+      <p>Don't have an account?
+      <a href="../createaccount/index.php">Create Account</a>
+    </p>
     </form>
   </body>
 </html>
