@@ -3,8 +3,8 @@ include("sortFunctions.php");
 
 $string_match = "";
 
-if(isset($_POST['search'])) {
-  $string_match = pg_escape_string($_POST['search']);
+if(isset($_POST['submit'])) {
+  $string_match = pg_escape_string($db_connection, $_POST['search']);
 }
 
 if(isset($string_match)) {
@@ -14,7 +14,6 @@ if(isset($string_match)) {
 $search_sql = "SELECT name FROM items WHERE name LIKE '%".$string_match."%'";
 
 $result = pg_query($search_sql);
-
 ?>
 <html lang="en">
 <head>
@@ -28,11 +27,13 @@ $result = pg_query($search_sql);
     <div class="form-group mx-sm-3 mb-2">
       <input class="form-control" id="search" name="search" type="text" placeholder="Search...">
     </div>
-    <input class="btn btn-info mb-2 "id="submit" type="submit" value="Search">
+    <input class="btn btn-info mb-2 "id="submit" name="submit" type="submit" value="Search">
     <br/>
     <?php
     while($row = pg_fetch_row($result)) {
-      echo $row[0];
+    ?>
+      <p><?php echo $row[0];?></p>
+    <?php
     }
     ?>
   </form>

@@ -33,10 +33,8 @@
         </label>
       </div>
       <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+      <p>Don't have an account?<a href="../createaccount/index.php"> Create an Account</a></p>
       <p class="mt-5 mb-3 text-muted">Copyright &copy; 2020</p>
-      <p>Don't have an account?
-      <a href="../createaccount/index.php">Create Account</a>
-    </p>
     </form>
   </body>
 </html>

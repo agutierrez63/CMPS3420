@@ -1,2 +1,5 @@
 
 connectToDB.php
+sortFunctions.php
+search.php
+errors.php

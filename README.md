@@ -14,8 +14,8 @@ database class to create this web application.
 
 ## Screenshots
 ![Alt text](./misc/screenshot_1.png?raw=true "Screenshot 1")
-![Alt text](./misc/screenshot_2.png?raw=true "Screenshot 1")
-![Alt text](./misc/screenshot_3.png?raw=true "Screenshot 1")
+![Alt text](./misc/screenshot_2.png?raw=true "Screenshot 2")
+![Alt text](./misc/screenshot_3.png?raw=true "Screenshot 3")
 
 ## Authors and Acknowledgements
 Group 3: Adrian Gutierrez, Rudy Martinez, Justin Selsor
