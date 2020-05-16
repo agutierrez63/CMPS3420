@@ -1,6 +1,6 @@
 <?php include('connectToDB.php');
 
-$name = "Select name from customers rand() LIMIT 1;";
+$customer = pg_query($db_connection, "SELECT fname, lname, address, phone_number FROM customers ORDER BY RANDOM() LIMIT 1");
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,13 @@ $name = "Select name from customers rand() LIMIT 1;";
 		<header>
 			<h1>Invoice</h1>
 			<address >
-				<p><?php echo $name;?></p>
+				<?php 
+				while($row = pg_fetch_row($customer)) {
+					print("<p>$row[0] $row[1]</p>\n");
+					print("<p>$row[2]</p>\n");
+					print("<p>$row[3]</p>\n");
+				}
+				?>
 				<p>1234 Street Ave<br>City, ST 000000</p>
 				<p>(800) 555-1234</p>
 			</address>
@@ -36,8 +42,8 @@ $name = "Select name from customers rand() LIMIT 1;";
 					<td><span >January 1, 2012</span></td>
 				</tr>
 				<tr>
-					<th><span >Amount Due</span></th>
-					<td><span id="prefix" >$</span><span>600.00</span></td>
+					<th><span >Amount</span></th>
+					<td><span id="prefix" ></span><span>24</span></td>
 				</tr>
 			</table>
 			<table class="inventory">
