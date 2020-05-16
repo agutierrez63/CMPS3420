@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -36,8 +37,17 @@
                 </div>
                 <div class="col-md-3 col-12 text-right">
                     <p class="my-md-4 header-links">
-                        <a href="./signin/index.php" class="px-2"  onclick="document.getElementById('id01')">Sign In </a>
-                        <a href="./createaccount/index.php" class="px-2">Create Account</a>
+                        <?php if(!isset($_SESSIOIN['full_name'])) {
+                            $_SESSION['msg'] = "You must sign in first";
+                        }
+                        ?>
+                        <?php if(isset($_SESSION['full_name'])) { ?>
+                            <a href="#" class="px-2" name="login_status"><?php echo $_SESSION['full_name']?></a>
+                            <a href="./account/index.php" class="px-2" name="account"><?php echo 'View Account'; ?></a>
+                        <?php } else { ?>
+                            <a href="./signin/index.php" class="px-2" name="login_status">Sign in</a>
+                            <a href="./createaccount/index.php" class="px-2" name="login_status">Create Account</a>
+                        <?php } ?>
                     </p>
                 </div>
             </div>
@@ -52,25 +62,10 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">HOME<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="./shop/index.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item">
+                    <a class="nav-link" href="./shop/index.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     SHOP
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">DIVISION 1</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">DIVISION 2</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">DIVISION 3</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">DIVISION 4</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./shop/index.php">COLLECTION</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./shop/index.php">FEATURES</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./aboutus/index.php">ABOUT US</a>

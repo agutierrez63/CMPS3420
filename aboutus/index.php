@@ -50,30 +50,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="../index.php">HOME<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../index.php">HOME</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="../shop/index.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    SHOP
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">DIVISION 1</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">DIVISION 2</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">DIVISION 3</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">DIVISION 4</a>
-                    </div>
+                    <a class="nav-link dropdown-toggle" href="../shop/index.php">SHOP</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../shop/index.php">COLLECTION</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../shop/index.php">FEATURES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">ABOUT US</a>
+                    <a class="nav-link" href="index.php">ABOUT US<span class="sr-only">(current)</span></a>
                 </li>
                 </ul>
             </div>
