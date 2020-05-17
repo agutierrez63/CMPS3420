@@ -19,7 +19,6 @@
 
   <body class="text-center">
     <form class="form-signin border rounded" method="POST" action="index.php">
-      <?php include("../errors.php")?>
       <a href="../index.php"><img class="mb-4" src="../assets/Dollar_Tree_logo_symbol.png" alt="" width="160px" height="90px"></a>
       <h1 class="h3 mb-3 font-weight-normal">Create An Account</h1>
       <div class="form-row">

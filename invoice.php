@@ -1,6 +1,9 @@
 <?php include('connectToDB.php');
 
 $customer = pg_query($db_connection, "SELECT fname, lname, address, phone_number FROM customers ORDER BY RANDOM() LIMIT 1");
+$employee = pg_query($db_connection, "SELECT eid, name FROM employees ORDER BY RANDOM() LIMIT 1");
+$purchase_order = pg_query($db_connection, "SELECT purchase_id, date_placed, store_id FROM purchase_order ORDER BY RANDOM() LIMIT 1");
+$item = pg_query($db_connection, "SELECT id, name, sales_price, purchase_price FROM items ORDER BY RANDOM() LIMIT 10");
 
 ?>
 <!DOCTYPE html>
@@ -22,68 +25,86 @@ $customer = pg_query($db_connection, "SELECT fname, lname, address, phone_number
 					print("<p>$row[3]</p>\n");
 				}
 				?>
-				<p>1234 Street Ave<br>City, ST 000000</p>
-				<p>(800) 555-1234</p>
 			</address>
 			<span><img alt="" src="./assets/Dollar_Tree_logo_symbol.png"></span>
 		</header>
 		<article>
 			<h1>Recipient</h1>
 			<address >
-				<p>Dollar Tree<br>c/o John Doe</p>
+				<?php 
+				while($row = pg_fetch_row($employee)) {
+					print("<p>Assisted By:\n");
+					print("<br>ID: $row[0]<br>Name: $row[1]</p>\n");
+				}
+				?>
 			</address>
 			<table class="meta">
+				<?php
+				while($row = pg_fetch_row($purchase_order)) { 
+				?>
 				<tr>
-					<th><span >Invoice #</span></th>
-					<td><span >101138</span></td>
+					<th><span >Order ID #</span></th>
+					<td><span ><?php print($row[0]);?></span></td>
 				</tr>
 				<tr>
 					<th><span >Date</span></th>
-					<td><span >January 1, 2012</span></td>
+					<td><span ><?php print($row[1]);?></span></td>
 				</tr>
 				<tr>
-					<th><span >Amount</span></th>
-					<td><span id="prefix" ></span><span>24</span></td>
+					<th><span >Store ID</span></th>
+					<td><span><?php print($row[2]);?></span></td>
 				</tr>
+				<?php 
+				}
+				?>
 			</table>
 			<table class="inventory">
 				<thead>
 					<tr>
 						<th><span >Item</span></th>
-						<th><span >Description</span></th>
-						<th><span >Rate</span></th>
-						<th><span >Quantity</span></th>
-						<th><span >Price</span></th>
+						<th><span >SKU</span></th>
+						<th><span >Sales Price</span></th>
+						<th><span >Purchase Price</span></th>
 					</tr>
 				</thead>
 				<tbody>
+					<?php
+					if($item) {
+						if(pg_num_rows($item) > 0) {
+							while($row = pg_fetch_row($item)) {
+					?>
 					<tr>
-						<td><span >Experience Review</span></td>
-						<td><span data-prefix>$</span><span >150.00</span></td>
-						<td><span >4</span></td>
-						<td><span data-prefix>$</span><span>600.00</span></td>
+						<td><span ></span><?php print($row[0]); ?></td>
+						<td><span ><?php print($row[1]); ?></span></td>
+						<td><span data-prefix>$</span><span><?php print($row[2]); ?>0</span></td>
+						<td><span data-prefix>$</span><span><?php print($row[3]); ?>0</span></td>
 					</tr>
+					<?php
+							}
+						}
+					}?>
 				</tbody>
 			</table>
 			<table class="balance">
 				<tr>
 					<th><span >Total</span></th>
-					<td><span data-prefix>$</span><span>600.00</span></td>
+					<td><span data-prefix>$</span><span></span></td>
 				</tr>
 				<tr>
 					<th><span >Amount Paid</span></th>
-					<td><span data-prefix>$</span><span >0.00</span></td>
+					<td><span data-prefix>$</span><span ></span></td>
 				</tr>
 				<tr>
-					<th><span >Balance Due</span></th>
-					<td><span data-prefix>$</span><span>600.00</span></td>
+					<!--<th><span >Balance Due</span></th>
+					<td><span data-prefix>$</span><span>600.00</span></td>-->
 				</tr>
 			</table>
 		</article>
-		<aside>
+		<!--<aside>
 			<h1><span >Additional Notes</span></h1>
 			<div>
+			<span >N/A</span>
 			</div>
-		</aside>
+		</aside>-->
 	</body>
 </html>
