@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include('connectToDB.php')?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -63,9 +63,7 @@
                     <a class="nav-link" href="index.php">HOME<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./shop/index.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    SHOP
-                    </a>
+                    <a class="nav-link" href="./shop/index.php">SHOP</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./aboutus/index.php">ABOUT US</a>
@@ -130,7 +128,7 @@
         </div><br/>
         <div class="text-center">
             <div class="row" style="width:100%">
-                <div class="sm-col" style="margin: 0 100px 0 420px">
+                <div class="sm-col" style="margin: 0 auto 0 10em">
                     <h4 class="text-center">Toys</h4>
                     <div class="overlay-container">
                         <img src="./assets/toys.jpg" class="img-thumbnail text-center rounded" alt="Avatar">
@@ -148,7 +146,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="sm-col" style="margin: 0 100px;">
+                <div class="sm-col" style="margin: 0 auto;">
                     <h4 class="text-center">Toiletry</h4>
                     <div class="overlay-container">
                         <img src="./assets/toiletry.jpg" class="img-thumbnail text-center rounded" alt="Avatar">

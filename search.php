@@ -29,13 +29,11 @@ $result = pg_query($search_sql);
     </div>
     <input class="btn btn-info mb-2 "id="submit" name="submit" type="submit" value="Search">
     <br/>
-    <?php
+  </form>
+  <?php
     while($row = pg_fetch_row($result)) {
-    ?>
-      <p><?php echo $row[0];?></p>
-    <?php
+      print("<p style='margin: 0 auto 1 20;'>$row[0]</p>\n");
     }
     ?>
-  </form>
 </body>
 </html>

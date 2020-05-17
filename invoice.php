@@ -1,10 +1,11 @@
 <?php include('connectToDB.php');
+require("fpdf.php");
 
 $customer = pg_query($db_connection, "SELECT fname, lname, address, phone_number FROM customers ORDER BY RANDOM() LIMIT 1");
 $employee = pg_query($db_connection, "SELECT eid, name FROM employees ORDER BY RANDOM() LIMIT 1");
 $purchase_order = pg_query($db_connection, "SELECT purchase_id, date_placed, store_id FROM purchase_order ORDER BY RANDOM() LIMIT 1");
 $item = pg_query($db_connection, "SELECT id, name, sales_price, purchase_price FROM items ORDER BY RANDOM() LIMIT 10");
-
+$total = pg_query($db_connection, "SELECT SUM(sales_price) AS total FROM items ORDER BY RANDOM() LIMIT 1");
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +35,7 @@ $item = pg_query($db_connection, "SELECT id, name, sales_price, purchase_price F
 				<?php 
 				while($row = pg_fetch_row($employee)) {
 					print("<p>Assisted By:\n");
-					print("<br>ID: $row[0]<br>Name: $row[1]</p>\n");
+					print("<br>Employee ID: $row[0]<br>Name: $row[1]</p>\n");
 				}
 				?>
 			</address>
@@ -61,8 +62,8 @@ $item = pg_query($db_connection, "SELECT id, name, sales_price, purchase_price F
 			<table class="inventory">
 				<thead>
 					<tr>
-						<th><span >Item</span></th>
-						<th><span >SKU</span></th>
+						<th><span >Item ID</span></th>
+						<th><span >Name</span></th>
 						<th><span >Sales Price</span></th>
 						<th><span >Purchase Price</span></th>
 					</tr>
@@ -82,29 +83,16 @@ $item = pg_query($db_connection, "SELECT id, name, sales_price, purchase_price F
 					<?php
 							}
 						}
-					}?>
+					}
+					?>
 				</tbody>
 			</table>
 			<table class="balance">
 				<tr>
 					<th><span >Total</span></th>
-					<td><span data-prefix>$</span><span></span></td>
-				</tr>
-				<tr>
-					<th><span >Amount Paid</span></th>
-					<td><span data-prefix>$</span><span ></span></td>
-				</tr>
-				<tr>
-					<!--<th><span >Balance Due</span></th>
-					<td><span data-prefix>$</span><span>600.00</span></td>-->
+					<td><span data-prefix>$</span><span>0</span></td>
 				</tr>
 			</table>
 		</article>
-		<!--<aside>
-			<h1><span >Additional Notes</span></h1>
-			<div>
-			<span >N/A</span>
-			</div>
-		</aside>-->
 	</body>
 </html>

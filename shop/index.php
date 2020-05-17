@@ -1,3 +1,42 @@
+<?php
+include('../connectToDB.php');
+
+if(isset($_POST['add_to_cart'])) {
+    if(isset($_SESSION['shopping_cart'])) {
+        $item_array_id = array_column($_SESSION['shopping_cart'], "item_id");
+        if(!in_array($_GET['id'], $item_array_id)) {
+            $count = count($_SESSION['shopping_cart']);
+            $item_array = array(
+                "item_id"         =>  $_GET['id'],
+                "item_name"       =>  $_POST['hidden_name'],
+                "item_price"      =>  $_POST['hidden_price'],
+                "item_quantity"   =>  $_POST['quantity']
+            );
+            $_SESSION['shoping_cart'][$count] = $item_array;
+        } else {
+            echo '<script>alert("Item Added")</script>\n';
+        }
+    } else {
+        $item_array = array(
+            "item_id"         =>  $_GET['id'],
+            "item_name"       =>  $_POST['hidden_name'],
+            "item_price"      =>  $_POST['hidden_price'],
+            "item_quantity"   =>  $_POST['quantity']
+        );
+        $_SESSION['shopping_cart'][0] = $item_array;
+    }
+}
+if(isset($_GET['action'])) {
+    if($_GET['action'] === 'delete') {
+        foreach($_SESSION['shopping_cart'] as $keys => $values) {
+            if($values['item_id'] == $GET['id']) {
+                unset($_SESSION['shopping_cart'][$keys]);
+                echo '<script>alert("Item Removed")</script>\n';
+            }
+        }
+    }
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -36,8 +75,8 @@
                 </div>
                 <div class="col-md-3 col-12 text-right">
                     <p class="my-md-4 header-links">
-                        <a href="./signin/index.php" class="px-2"  onclick="document.getElementById('id01')">Sign In </a>
-                        <a href="./createaccount/index.php" class="px-2">Create Account</a>
+                        <a href="../signin/index.php" class="px-2"  onclick="document.getElementById('id01')">Sign In </a>
+                        <a href="../createaccount/index.php" class="px-2">Create Account</a>
                     </p>
                 </div>
             </div>
@@ -70,10 +109,73 @@
         </div>
     </header>
 
-    <!-- Main -->
-    <main>
- 
-    </main><br/>
+    <?php
+    $result = pg_query($db_connection, "SELECT id, name, purchase_price FROM items ORDER BY id ASC LIMIT 10");
+    while($row = pg_fetch_assoc($result)) {
+    ?>
+    <div class="col-sm-4 col-md-3">
+        <form method="POST" action="index.php?action=add&id=<?php echo $row['id'];?>" >
+        <div style="border: 1px solid #333; background-color: #f1f1f1; border-radius: 5px; padding: 16px;">
+            <img src="../assets/no_image.jpg" style="height: 30%; width: 90%" class="img-responsive">
+            <p style="margin: 0;"><?php echo $row['name']?></p>
+            <p style="margin: 0;">$<?php echo $row['purchase_price']?>0</p>
+            <input type="text" name="quantity" class="form-control" value="1">
+            <input type="hidden" name="hidden_name" value="<?php echo $row['name']?>">
+            <input type="hidden" name="hidden_price" value="<?php echo $row['purchase_price']?>">
+            <input type="submit" name="add_to_cart" style="margin-top: 5px; margin-left: 1px;" class="btn btn-success" value="Add To Cart">
+        </div>
+        </form>
+    </div>
+    <?php
+    }
+    ?>
+    <div style="clear:both"></div>
+    <br />
+    <div class="table-responsive">
+    <table class="table">
+    <tr><th colspan="5"><h3 style="color:#000;">Order Details</h3></th></tr>
+    <tr>
+      <th style='color: #000' width="40%">Product Name</th>
+      <th style='color: #000' width="10%">Quantity</th>
+      <th style='color: #000' width="20%">Price</th>
+      <th style='color: #000' width="15%">Total</th>
+    </tr>
+    <?php
+      if(!empty($_SESSION['shopping_cart'])):
+        $total = 0;
+        foreach($_SESSION['shopping_cart'] as $key => $row):
+    ?>
+    <tr>
+      <td style='color: #000'><?php echo $row['item_name']; ?></td>
+      <td style='color: #000'><?php echo $row['item_quantity']; ?></td>
+      <td style='color: #000'>$ <?php echo number_format($row['item_price'], 2); ?></td>
+      <td style='color: #000'>$ <?php echo number_format($row['item_quantity'] * $row['item_price'], 2); ?></td>
+    </tr>
+    <?php
+        $total = $total + ($row['item_quantity'] * $row['item_price']);
+        endforeach;
+    ?>
+    <tr>
+      <td style='color: #000' colspan="3" align="right">Total</td>
+      <td style='color: #000' align="right">$ <?php echo number_format($total, 2); ?></td>
+      <td></td>
+    </tr>
+    <tr>
+      <!-- Show checkout button only if the shopping cart is not empty -->
+      <td colspan="5">
+      <?php
+        if (isset($_SESSION['shopping_cart'])):
+        if (count($_SESSION['shopping_cart']) > 0):
+      ?>
+      <a href="#" class="button" style="color:#000;">Proceed to Cart</a>
+      <?php endif; endif; ?>
+      </td>
+    </tr>
+    <?php
+      endif;
+    ?>
+    </table>
+    </div>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3">
