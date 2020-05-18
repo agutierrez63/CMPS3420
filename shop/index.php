@@ -1,42 +1,4 @@
-<?php
-include('../connectToDB.php');
-
-if(isset($_POST['add_to_cart'])) {
-    if(isset($_SESSION['shopping_cart'])) {
-        $item_array_id = array_column($_SESSION['shopping_cart'], "item_id");
-        if(!in_array($_GET['id'], $item_array_id)) {
-            $count = count($_SESSION['shopping_cart']);
-            $item_array = array(
-                "item_id"         =>  $_GET['id'],
-                "item_name"       =>  $_POST['hidden_name'],
-                "item_price"      =>  $_POST['hidden_price'],
-                "item_quantity"   =>  $_POST['quantity']
-            );
-            $_SESSION['shoping_cart'][$count] = $item_array;
-        } else {
-            echo '<script>alert("Item Added")</script>\n';
-        }
-    } else {
-        $item_array = array(
-            "item_id"         =>  $_GET['id'],
-            "item_name"       =>  $_POST['hidden_name'],
-            "item_price"      =>  $_POST['hidden_price'],
-            "item_quantity"   =>  $_POST['quantity']
-        );
-        $_SESSION['shopping_cart'][0] = $item_array;
-    }
-}
-if(isset($_GET['action'])) {
-    if($_GET['action'] === 'delete') {
-        foreach($_SESSION['shopping_cart'] as $keys => $values) {
-            if($values['item_id'] == $GET['id']) {
-                unset($_SESSION['shopping_cart'][$keys]);
-                echo '<script>alert("Item Removed")</script>\n';
-            }
-        }
-    }
-}
-?>
+<?php include('../connectToDB.php'); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -75,8 +37,14 @@ if(isset($_GET['action'])) {
                 </div>
                 <div class="col-md-3 col-12 text-right">
                     <p class="my-md-4 header-links">
-                        <a href="../signin/index.php" class="px-2"  onclick="document.getElementById('id01')">Sign In </a>
-                        <a href="../createaccount/index.php" class="px-2">Create Account</a>
+                        <?php
+                        if(isset($_SESSION['email'])) { ?>
+                            <a href="#" class="px-2">Welcome <strong><?php echo $_SESSION['email']; ?></strong></a>
+                            <a href="index.php?logout='1'" style="color: red;" text-dectoration:none;>Logout</a>
+                        <?php } else { ?>
+                            <a href="../signin/index.php" class="px-2">Sign In </a>
+                            <a href="../createaccount/index.php" class="px-2">Create Account</a>
+                        <?php } ?>
                     </p>
                 </div>
             </div>
@@ -110,8 +78,9 @@ if(isset($_GET['action'])) {
     </header>
 
     <?php
-    $result = pg_query($db_connection, "SELECT id, name, purchase_price FROM items ORDER BY id ASC LIMIT 10");
+    $result = pg_query($db_connection, "SELECT id, name, purchase_price, sales_price FROM items ORDER BY id ASC LIMIT 10");
     while($row = pg_fetch_assoc($result)) {
+
     ?>
     <div class="col-sm-4 col-md-3">
         <form method="POST" action="index.php?action=add&id=<?php echo $row['id'];?>" >
@@ -150,6 +119,11 @@ if(isset($_GET['action'])) {
       <td style='color: #000'><?php echo $row['item_quantity']; ?></td>
       <td style='color: #000'>$ <?php echo number_format($row['item_price'], 2); ?></td>
       <td style='color: #000'>$ <?php echo number_format($row['item_quantity'] * $row['item_price'], 2); ?></td>
+      <td style='color: #000'>
+        <a href="index.php?action=delete&id=<?php echo $row['item_id']?>">
+            <div class="btn-danger">Remove</div>
+        </a>
+      </td>
     </tr>
     <?php
         $total = $total + ($row['item_quantity'] * $row['item_price']);
@@ -167,7 +141,7 @@ if(isset($_GET['action'])) {
         if (isset($_SESSION['shopping_cart'])):
         if (count($_SESSION['shopping_cart']) > 0):
       ?>
-      <a href="#" class="button" style="color:#000;">Proceed to Cart</a>
+      <a href="../invoice.php" class="button" style="color:#000;">Proceed to Checkout</a>
       <?php endif; endif; ?>
       </td>
     </tr>

@@ -1,5 +1,4 @@
 <?php include('connectToDB.php');
-require("fpdf.php");
 
 $customer = pg_query($db_connection, "SELECT fname, lname, address, phone_number FROM customers ORDER BY RANDOM() LIMIT 1");
 $employee = pg_query($db_connection, "SELECT eid, name FROM employees ORDER BY RANDOM() LIMIT 1");
@@ -77,8 +76,8 @@ $total = pg_query($db_connection, "SELECT SUM(sales_price) AS total FROM items O
 					<tr>
 						<td><span ></span><?php print($row[0]); ?></td>
 						<td><span ><?php print($row[1]); ?></span></td>
-						<td><span data-prefix>$</span><span><?php print($row[2]); ?>0</span></td>
-						<td><span data-prefix>$</span><span><?php print($row[3]); ?>0</span></td>
+						<td><span data-prefix>$</span><span><?php echo number_format($row[2], 2); ?></span></td>
+						<td><span data-prefix>$</span><span><?php echo number_format($row[3], 2); ?></span></td>
 					</tr>
 					<?php
 							}
@@ -87,12 +86,12 @@ $total = pg_query($db_connection, "SELECT SUM(sales_price) AS total FROM items O
 					?>
 				</tbody>
 			</table>
-			<table class="balance">
+			<!--<table class="balance">
 				<tr>
 					<th><span >Total</span></th>
-					<td><span data-prefix>$</span><span>0</span></td>
+					<td><span data-prefix>$</span></td>
 				</tr>
-			</table>
+			</table>-->
 		</article>
 	</body>
 </html>

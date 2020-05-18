@@ -36,8 +36,14 @@
                 </div>
                 <div class="col-md-3 col-12 text-right">
                     <p class="my-md-4 header-links">
-                        <a href="../signin/index.php" class="px-2"  onclick="document.getElementById('id01')">Sign In </a>
-                        <a href="../createaccount/index.php" class="px-2">Create Account</a>
+                        <?php
+                        if(isset($_SESSION['email'])) { ?>
+                            <a href="#" class="px-2">Welcome <strong><?php echo $_SESSION['email']; ?></strong></a>
+                            <a href="index.php?logout='1'" style="color: red;" text-dectoration:none;>Logout</a>
+                        <?php } else { ?>
+                            <a href="../signin/index.php" class="px-2">Sign In </a>
+                            <a href="../createaccount/index.php" class="px-2">Create Account</a>
+                        <?php }?>
                     </p>
                 </div>
             </div>

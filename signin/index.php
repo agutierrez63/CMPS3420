@@ -20,19 +20,13 @@
 
   <body class="text-center">
     <form class="form-signin" method="POST" action="index.php">
-      <?php include ("../errors.php") ?>
-      <a href="../index.php"><img class="mb-4" src="../assets/Dollar_Tree_logo_symbol.png" alt="" width="160px" height="90px"></a>
+      <a href="../index.php"><img class="mb-4" src="../assets/Dollar_Tree_logo_symbol.png" alt="Logo" width="160px" height="90px"></a>
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus><br />
+      <input name="email" type="email" id="email" class="form-control" placeholder="Email address" required autofocus><br />
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="password" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+      <input name="password" type="password" id="password" class="form-control" placeholder="Password" required>
+      <button name="login_user" class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
       <p>Don't have an account?<a href="../createaccount/index.php"> Create an Account</a></p>
       <p class="mt-5 mb-3 text-muted">Copyright &copy; 2020</p>
     </form>

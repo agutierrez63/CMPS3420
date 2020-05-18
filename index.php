@@ -37,16 +37,13 @@
                 </div>
                 <div class="col-md-3 col-12 text-right">
                     <p class="my-md-4 header-links">
-                        <?php if(!isset($_SESSIOIN['full_name'])) {
-                            $_SESSION['msg'] = "You must sign in first";
-                        }
-                        ?>
-                        <?php if(isset($_SESSION['full_name'])) { ?>
-                            <a href="#" class="px-2" name="login_status"><?php echo $_SESSION['full_name']?></a>
-                            <a href="./account/index.php" class="px-2" name="account"><?php echo 'View Account'; ?></a>
+                        <?php
+                        if(isset($_SESSION['email'])) { ?>
+                            <a href="#" class="px-2">Welcome <strong><?php echo $_SESSION['email']; ?></strong></a>
+                            <a href="index.php?logout='1'" style="color: red;" text-dectoration:none;>Logout</a>
                         <?php } else { ?>
-                            <a href="./signin/index.php" class="px-2" name="login_status">Sign in</a>
-                            <a href="./createaccount/index.php" class="px-2" name="login_status">Create Account</a>
+                            <a href="./signin/index.php" class="px-2">Sign In </a>
+                            <a href="./createaccount/index.php" class="px-2">Create Account</a>
                         <?php } ?>
                     </p>
                 </div>
