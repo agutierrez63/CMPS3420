@@ -80,7 +80,6 @@
     <?php
     $result = pg_query($db_connection, "SELECT id, name, purchase_price, sales_price FROM items ORDER BY id ASC LIMIT 10");
     while($row = pg_fetch_assoc($result)) {
-
     ?>
     <div class="col-sm-4 col-md-3">
         <form method="POST" action="index.php?action=add&id=<?php echo $row['id'];?>" >

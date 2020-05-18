@@ -31,9 +31,9 @@ $result = pg_query($search_sql);
     <br/>
   </form>
   <?php
-    while($row = pg_fetch_row($result)) {
-      print("<p style='margin: 0 auto 1 20;'>$row[0]</p>\n");
-    }
-    ?>
+  while($row = pg_fetch_row($result)) {
+    print("<p style='margin: 0 auto 1 20;'>$row[0]</p>\n");
+  }
+  ?>
 </body>
 </html>
