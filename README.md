@@ -10,12 +10,17 @@ purchase goods all handled by the database. The front-end was created
 using HTML, PHP, Javascript, and Bootstrap 4. The back-end was created
 using Postgres or PSQL on a database server hosted by Amazon otherwiise
 known as a AWS RDS. We implement the techniques we learned in our 
-database class to create this web application.
+database class to create this web application. An invoice can also be
+generated from random data pulled from the database, but it can also
+fill the invoice with data parsed from purcahses made from customer
+sessions.
 
 ## Screenshots
 ![Alt text](./misc/screenshot_1.png?raw=true "Screenshot 1")
 ![Alt text](./misc/screenshot_2.png?raw=true "Screenshot 2")
 ![Alt text](./misc/screenshot_3.png?raw=true "Screenshot 3")
+![Alt text](./misc/screenshot_4.png?raw=true "Screenshot 4")
+
 
 ## Authors and Acknowledgements
 Group 3: Adrian Gutierrez, Rudy Martinez, Justin Selsor
